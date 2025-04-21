@@ -1,0 +1,37 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    margin: 65px 100px 0px 100px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DDDDDD;
+
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        .nav-link {
+            text-decoration: none;
+            &.active {
+                font-family: Lato;
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 100%;
+                letter-spacing: 4%;
+                color: #000000;
+            }
+        }
+       
+    }
+    .login-signup-block {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 20%;
+        gap: 40px;
+    }
+   
+}
+
+

@@ -1,0 +1,143 @@
+.feedback-card {
+    width: 969px;
+    height: 437px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    place-self: center;
+    margin-top: 36px;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .feedback-title {
+        margin-top: 24px;
+        margin-left: 50px;
+        font-family: Lato;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+
+    }
+
+    .suggestion {
+        margin-left: 70px;
+        .review-title {
+            font-family: Lato;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+    
+        }
+        .review-points {
+            font-family: Lato;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 16px;
+            line-height: 100%;
+        }
+        .fix {
+            font-family: Lato;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 16px;
+            line-height: 100%;
+            color: #008D0C;
+
+        }
+      }
+
+
+
+}
+
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+ 
+  
+  .locked-section {
+    border: 2px solid #f3c97a;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    background: #fffdf5;
+    position: relative;
+    width: 536px;
+    height: 161px;
+    opacity: 0.8;
+    border-width: 2px;
+    border-radius: 20px;
+  
+    .lock-icon {
+        position: absolute;
+        left: -39px;
+        top: -16px;
+  
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  
+    .locked-message {
+      color: #6055AC;
+      font-family: Lato;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 125%;
+        padding: 70px 55px 58px 60px;
+
+      
+    }
+  }
+  
+  .price-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+  
+    .price-button {
+      background-color: #ff9100;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  
+    .cover-letter {
+        font-family: Lato;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 100%;
+        color: #5D5D5D;
+        padding-top: 12px;
+  
+      .plus {
+        color: #f9a825;
+        font-weight: bold;
+      }
+  
+      small {
+        display: block;
+        color: 5D5D5D;
+        font-family: Lato;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 4%;
+        padding-top: 6px;
+
+      }
+    }
+  }
+  

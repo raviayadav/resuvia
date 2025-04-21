@@ -1,0 +1,62 @@
+.payment-success {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    .success-icon {
+        margin-top: 110px;
+        box-shadow: 0 0 0 10px rgba(211, 243, 238, 1), 
+        0 0 0 15px rgba(211, 243, 238, 0.1), 
+        0 0 0 20px rgba(211, 243, 238, 0.5);
+        width: 58px;
+        height: 58px;
+        background: #4BE074;
+        display: flex;
+        place-content: center;
+        border-radius: 50%;
+
+    }
+    .title {
+        margin-top: 36px;
+        font-family: Lato;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 100%;
+        color: #000000;
+    }
+    .sub-title-1 {
+        margin-top: 32px;
+        font-family: Lato;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+        color: #5B5B5B;
+
+    }
+    .sub-title-2 {
+        margin-top: 16px;
+        font-family: Lato;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 100%;
+        color: #000000;
+    }
+    .sub-title-3 {
+        margin-top: 66px;
+        font-family: Lato;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+        color:  #000000;        
+    }
+
+    .sub-title-4 {
+        margin-top: 16px;
+        font-family: Lato;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        color: #C701DD;
+    }
+}

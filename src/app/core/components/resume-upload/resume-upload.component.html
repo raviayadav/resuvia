@@ -1,0 +1,22 @@
+@if(pageType !== 'payment-success') {<app-sub-header [pageType]="pageType"></app-sub-header>}
+@if(pageType === 'resume-upload'){
+    <div class="resume-upload-container">
+        <div class="dropbox" appDnd (fileDropped)="onFileDropped($event)">
+            <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event)" />
+            <div class="dropbox-title">Click/Drag & drop your resume</div>
+            <div class="dropbox-subtitle">PDF, DOCX supported</div>
+        </div>
+        <div class="upload-footer">
+            <button class="upload-btn" (click)="uploadFiles()">Upload</button>
+            <p class="button-text">Upload your resume now for a free ATS analysis!</p>
+        </div>
+    </div>
+} @else if(pageType ==='ats-score'){ 
+    <app-ats-score (pageType)="setPageType($event)" ></app-ats-score>
+} @else if (pageType === 'feedback-card') {
+    <feedback-card ></feedback-card>
+} @else if (pageType === 'payment-success') {
+    <app-payment-success></app-payment-success>
+}
+
+
