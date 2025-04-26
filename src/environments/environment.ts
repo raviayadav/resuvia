@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  supabaseUrl: 'YOUR_SUPABASE_URL', // Replace with your Supabase project URL
-  supabaseAnonKey: 'YOUR_SUPABASE_ANON_KEY' // Replace with your Supabase anon key
+  supabaseUrl: 'https://zmzcihcuhtwwqlcnxacc.supabase.co', // Replace with your Supabase project URL
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptemNpaGN1aHR3d3FsY254YWNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQzODg3MjksImV4cCI6MjA1OTk2NDcyOX0.HCldqf4DLda5b79mURv6lNjazKio9YL8Ev0Tg7cyRjk' // Replace with your Supabase anon key
 };
 
 /*

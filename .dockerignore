@@ -1,0 +1,27 @@
+# Git files
+.git
+.gitignore
+
+# Node modules (these will be installed inside the container)
+node_modules
+
+# Build output (this is generated during the build stage)
+dist
+/dist
+
+# IDE/Editor specific files
+.vscode
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files (these should be handled via environment variables or mounted volumes in production)
+# Adjust if you have specific needs, but generally avoid baking secrets into images.
+# src/environments/environment.prod.ts
+# src/environments/environment.ts
+# .env
+
+# OS specific files
+.DS_Store
+Thumbs.db
