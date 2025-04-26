@@ -7,8 +7,18 @@
         <a routerLink="/about-us" [routerLinkActive]="'active'" class="nav-link">About us</a>
         <a routerLink="/plans" [routerLinkActive]="'active'" class="nav-link">Plans</a>
     </div>
+
+    <!-- Auth Links/Button -->
     <div class="login-signup-block">
-        <div>Sign up</div>
-        <div>Login</div>
+      <!-- Show Login/Signup if NOT logged in -->
+      <ng-container *ngIf="!(isLoggedIn$ | async)">
+        <a routerLink="/signup" class="nav-link signup-link">Sign up</a>
+        <a routerLink="/login" class="nav-link login-link">Login</a>
+      </ng-container>
+
+      <!-- Show Logout if logged in -->
+      <ng-container *ngIf="isLoggedIn$ | async">
+        <button (click)="logout()" class="nav-link logout-button">Logout</button>
+      </ng-container>
     </div>
 </div>
