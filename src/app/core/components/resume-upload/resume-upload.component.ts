@@ -15,7 +15,7 @@ import { PaymentSuccessComponent } from "../payment-success/payment-success.comp
 export class ResumeUploadComponent {
   
   files: any[] = [];
-  pageType = 'payment-success';
+  pageType = 'resume-upload';
 
   /**
    * on file drop handler

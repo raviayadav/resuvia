@@ -30,8 +30,48 @@
         align-items: center;
         width: 20%;
         gap: 40px;
+
+        // Styles for Auth links/button
+        .nav-link { // Inherit base nav-link styles if desired, or define separately
+            text-decoration: none;
+            cursor: pointer;
+            padding: 8px 12px; // Example padding
+            border-radius: 4px; // Example border-radius
+            transition: background-color 0.2s ease;
+
+            &.signup-link {
+                // Specific styles for signup link if needed
+                // background-color: #28a745; // Example green
+                // color: white;
+            }
+
+            &.login-link {
+                 // Specific styles for login link if needed
+                // background-color: #007bff; // Example blue
+                // color: white;
+            }
+
+            &:hover {
+                // background-color: #e0e0e0; // Example hover
+            }
+        }
+
+        .logout-button {
+            background: none;
+            border: 1px solid #dc3545; // Example red border
+            color: #dc3545; // Example red text
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit; // Use the same font as other links/text
+            font-size: inherit; // Use the same font size
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+            &:hover {
+                background-color: #dc3545; // Red background on hover
+                color: white; // White text on hover
+            }
+        }
     }
-   
+
 }
-
-

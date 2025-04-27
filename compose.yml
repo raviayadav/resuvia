@@ -1,0 +1,20 @@
+# Use this file with `podman-compose up` or `docker-compose up`
+# Ensure you have podman-compose or docker-compose installed.
+
+version: '3.8' # Specify compose file version
+
+services:
+  frontend:
+    container_name: resuvia-frontend-app # Optional: Name for the running container
+    build:
+      context: . # Build the image from the Dockerfile in the current directory
+      dockerfile: Dockerfile
+    image: resuvia-frontend:latest # Optional: Name the image built by compose
+    ports:
+      - "8080:80" # Map host port 8080 to container port 80 (Nginx)
+    # Optional: Add environment variables if needed for runtime configuration
+    # environment:
+    #   - EXAMPLE_VAR=example_value
+    # Optional: Add volumes if you need persistent data or to mount config files
+    # volumes:
+    #   - ./some-config:/etc/some-config:ro
