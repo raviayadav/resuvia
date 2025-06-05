@@ -1,0 +1,11 @@
+<div class="my-space-container">
+    <app-sub-header [pageType]="pageType()"></app-sub-header>
+
+    @if(pageType() ==='ats-score'){ 
+        <app-ats-score (pageName)="setPageType($event)" ></app-ats-score>
+    }@else {  
+        <action-feedback></action-feedback>
+    }
+    <!-- if(pageType() ==='action-feedback') -->
+
+</div>

@@ -1,6 +1,4 @@
 .feedback-card {
-    width: 969px;
-    height: 437px;
     background: #FFFFFF;
     border-radius: 20px;
     display: flex;
@@ -8,27 +6,30 @@
     margin-top: 36px;
     flex-direction: column;
     border-radius: 12px;
-    padding: 24px;
+    padding: 38px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
     .feedback-title {
-        margin-top: 24px;
-        margin-left: 50px;
         font-family: Lato;
         font-weight: 700;
         font-size: 24px;
         line-height: 100%;
+        flex: 1 1 50%;
+        display: flex;
 
     }
 
     .suggestion {
-        margin-left: 70px;
         .review-title {
             font-family: Lato;
             font-weight: 600;
             font-size: 16px;
             line-height: 100%;
     
+        }
+        .suggested-text {
+          margin-top: 10px;
+          margin-bottom: 24px;
         }
         .review-points {
             font-family: Lato;
@@ -57,61 +58,29 @@
     font-size: 20px;
     margin-bottom: 20px;
   }
-  
- 
-  
-  .locked-section {
-    border: 2px solid #f3c97a;
-    border-radius: 8px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    background: #fffdf5;
-    position: relative;
-    width: 536px;
-    height: 161px;
-    opacity: 0.8;
-    border-width: 2px;
-    border-radius: 20px;
-  
-    .lock-icon {
-        position: absolute;
-        left: -39px;
-        top: -16px;
-  
-      img {
-        width: 75px;
-        height: 75px;
-      }
-    }
-  
-    .locked-message {
-      color: #6055AC;
-      font-family: Lato;
-        font-weight: 900;
-        font-size: 20px;
-        line-height: 125%;
-        padding: 70px 55px 58px 60px;
 
-      
-    }
-  }
   
   .price-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 24px;
+    flex: 1 1 50%;
   
     .price-button {
       background-color: #ff9100;
       color: white;
       padding: 12px 20px;
+      margin-left: 10px;
       font-size: 16px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
     }
+    .plus {
+        color: #f9a825;
+        font-weight: bold;
+        margin-right: 10px;
+      }
   
     .cover-letter {
         font-family: Lato;
@@ -119,25 +88,126 @@
         font-size: 24px;
         line-height: 100%;
         color: #5D5D5D;
-        padding-top: 12px;
+        padding-top: 12px;  
+     
+    }
   
-      .plus {
-        color: #f9a825;
-        font-weight: bold;
+
+      .first-500-users {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 12px;
+        margin: 0;
+        small {
+          display: block;
+          color: 5D5D5D;
+          font-family: Lato;
+          font-weight: 400;
+          font-style: italic;
+          font-size: 16px;
+          line-height: 100%;
+          letter-spacing:0.75px;
+          padding-top: 6px;
+
+        }
       }
+
+  }
+
+  .feedback-content {
+    display: flex;
+    margin-top: 24px;
+    .suggestion-box {
+      display: flex;
+      flex: 1 1 50%;
+      flex-direction: column;
+    }
+      .locked-section {
+          border: 2px solid #f3c97a;
+          border-radius: 8px;
+          padding: 16px;
+          display: flex;          
+          flex: 1 1 50%;
+          align-items: center;
+          background: #fffdf5;
+          position: relative;
+          width: 100%;
+          height: 161px;
+          opacity: 0.8;
+          border-width: 2px;
+          border-radius: 20px;
+
+          .suggestion-box {
+            padding-left: 24px;
+            filter: blur(6px);
+          }
+
+          .lock-icon {
+              position: absolute;
+              left: -39px;
+              top: -16px;
+
+            img {
+              width: 75px;
+              height: 75px;
+            }
+          }
+
+          .locked-message {
+            color: #6055AC;
+            font-family: Lato;
+              font-weight: 900;
+              font-size: 20px;
+              line-height: 125%;    
+              padding: 66px 0px 0 16px;
+          }
+        }
+  }
   
-      small {
-        display: block;
-        color: 5D5D5D;
-        font-family: Lato;
-        font-weight: 400;
-        font-style: italic;
-        font-size: 16px;
-        line-height: 100%;
-        letter-spacing: 4%;
-        padding-top: 6px;
+ 
+  @media only screen and (max-width: 767px) {
+    .feedback-card {
+      margin-left: 16px;
+      margin-right: 16px;
+      padding: 0;
+      .feedback-header {
+        flex-direction: column-reverse;
+      }
+      .feedback-content {
+        flex-direction: column;
+
+        .locked-section {
+          width: 100%;
+        }
+      }
+
+      .price-box {
+        flex: 1 1 100%;
+        width: 100%;
+        justify-content: space-between !important;
+        align-items: start !important;
+        padding: 0 12px;        
+        padding-top: 30px;
+        
 
       }
+      .feedback-title {
+          margin-top: 26px;
+          padding: 0 24px;
+        }
+      .feedback-content {
+        padding: 0 24px;
+      } 
+      .locked-section {
+        width: calc(100% - 24px) !important;
+        margin: 0 12px;
+        .suggestion-box {
+            padding-left: 8px;
+      }
+      }
+      
     }
   }
+  
+  
   

@@ -1,0 +1,67 @@
+<div class="feedback-action">
+    <div class="header-block">
+            Resume Feedback
+    </div>
+    <div class="preview-container">
+        <div class="preview-content  d-flex">
+            <div class="preview-block">
+                <div class="preview">
+                    <iframe src="assets/pdf/1.pdf#toolbar=0" ></iframe>
+                </div>
+            </div>
+    
+            <div class="action-items-block">
+                <div class="suggestion-box">
+                @let items = [1,2,3,4];
+                @for (_item of items; track _item) {
+                    <div class="suggestion">
+                        <div class="review-title"> Grammar issue with suggested fix</div>
+                        <p><span class="review-points">Experience in managing team</span> → <span class="fix">“Experience managing a team”</span></p>
+                    </div>
+
+                    <div class="suggestion">
+                    <div class="review-title">Rephrasing suggestion</div >
+                        <p><span class="review-points">Worked on projects →</span> <span class="fix">“Led 5 high-impact product initiatives”</span></p>
+                    </div>
+                    }   
+                </div>
+
+                <div class="feedback-action-container">
+                    <div class="download-feedback" (click)="downloadFeedback()">Download feedback</div>
+                    <div class="create-cover-page-btn" (click)="createCoverLetter()">Create cover page</div>
+                </div>
+            </div>
+        </div>
+
+         <div class="preview-content  d-flex">
+            <div class="preview-block">
+                <div class="preview">
+                    <iframe src="assets/pdf/1.pdf#toolbar=0" ></iframe>
+                </div>
+            </div>
+    
+            <div class="action-items-block">
+                <div class="suggestion-box">
+                @let items1 = [1,2,3,4];
+                @for (_item of items1; track _item) {
+                    <div class="suggestion">
+                        <div class="review-title"> Grammar issue with suggested fix</div>
+                        <p><span class="review-points">Experience in managing team</span> → <span class="fix">“Experience managing a team”</span></p>
+                    </div>
+
+                    <div class="suggestion">
+                    <div class="review-title">Rephrasing suggestion</div >
+                        <p><span class="review-points">Worked on projects →</span> <span class="fix">“Led 5 high-impact product initiatives”</span></p>
+                    </div>
+                    }   
+                </div>
+
+                <div class="feedback-action-container">
+                    <div class="download-feedback" (click)="downloadFeedback()">Download feedback</div>
+                    <div class="create-cover-page-btn" (click)="createCoverLetter()">Create cover page</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

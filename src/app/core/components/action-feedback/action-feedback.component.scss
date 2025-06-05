@@ -1,0 +1,155 @@
+.feedback-action {
+    padding: 54px 120px 60px;
+     .header-block {
+            font-family: Lato;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing:0.75px;
+            margin-bottom: 46px;
+            text-align: center;
+        }
+        .preview-container {
+            overflow-y: auto;
+            max-height: calc(100vh - 456px);
+             .preview-content {
+                &:last-child {
+                    margin-bottom: 0px !important;
+                }
+                margin-bottom: 60px;
+                .preview-block {
+                    display: flex;
+                    flex: 1 1 50%;
+                    justify-content: center;
+                    .preview {
+                        width: 340px;
+                        height: 442px;
+                        background-color: #ccc;    
+                        border: 18px solid  rgba(63, 61, 137, 1);
+                        border-radius: 11px;
+                        iframe {
+                        width: calc(100% - -1px);
+                        height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+       
+    
+
+    .action-items-block {
+        display: flex;
+        flex: 1 1 50%;
+        flex-direction: column;
+          .suggestion-box {
+                display: flex;
+                flex: 1 1 50%;
+                flex-direction: column;
+                overflow-y: auto;
+                min-height: 360px;
+                max-height: 360px;
+                border-bottom: 1px solid rgba(218, 218, 218, 1);
+                 .suggestion {
+                    .highlight{
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 16px;
+                            background: rgba(255, 38, 38, 1);
+                            position: absolute;
+                            left: 0;
+                        }
+                    .review-title {
+                        position: relative;
+                        font-family: Lato;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 100%;
+                        letter-spacing:0.75px;
+
+                        
+                        .highlight-dot {
+                            display: inline-block;
+                            position: absolute;
+                            left: -10px;
+                            margin: 0;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 20px;
+                            background: rgba(255, 38, 38, 1);
+                        }
+                
+                    }
+                    .review-points {
+                        padding-left: 24px;
+                        font-family: Lato;
+                        font-weight: 400;
+                        font-style: italic;
+                        font-size: 14px;
+                        line-height: 100%;
+                    }
+                    .fix {
+                        font-family: Lato;
+                        font-weight: 400;
+                        font-style: italic;
+                        font-size: 14px;
+                        line-height: 100%;
+                        color: #008D0C;
+
+                    }
+                }
+            }
+    }
+
+    .feedback-action-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-top: 20px;
+
+        .download-feedback {
+            font-family: Lato;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing:0.75px;
+            color: rgba(255, 149, 0, 1);
+        }
+        .create-cover-page-btn {
+            font-family: Lato;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 100%;
+            letter-spacing:0.75px;
+            background-color: #ff9100;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 767px) {
+    .feedback-action {
+        padding: 28px 32px !important;
+        .header-block {
+            margin-bottom: 24px !important;
+        }
+        .preview-container {
+            overflow-y: auto;
+            max-height: calc(100vh - 400px);
+        }
+        .preview-content {
+            flex-direction: column;
+        }
+        .action-items-block {
+            margin-top: 30px !important;
+         }
+    }
+        
+}

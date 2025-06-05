@@ -1,0 +1,96 @@
+.signup-modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+
+    .signup-modal-body {
+        display: flex;
+        height: 80vh;
+        width: 100%;
+        padding: 50px 152px;
+
+
+        .gmail-block {
+            display: flex;
+            flex: 1 1 50%;
+        }
+
+        .logo-block {
+            display: flex;
+            flex: 1 1 50%;
+            align-items: end;
+            justify-content: center;
+            flex-direction: column;
+            .logo-text {
+                font-family: Lato;
+                font-weight: 900;
+                font-size: 36px;
+                line-height: 100%;
+                letter-spacing: 0.75px;
+                text-align: center;
+                background: linear-gradient(90.4deg, #424242 -5.44%, #050099 38.62%, #C701DD 92.05%);
+                background-clip: text;
+                color: transparent;
+                margin-top: 18px;
+
+            }
+        }
+    }
+}   
+
+
+@media only screen and (max-width: 767px) {
+    .signup-modal-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .signup-modal-body {
+            display: flex;
+            flex-direction: column-reverse;
+            height: 80vh;
+            width: 100%;
+            padding: 0;
+
+
+            .gmail-block {
+                display: flex;
+                flex: 1 1 100%;
+                border: 1px solid rgba(218, 220, 224, 1);
+                border-radius: 8px;
+                border-width: 1px;
+                margin: 38px 16px;
+                .login-block {
+                    width: 100%;
+                }
+            }
+
+            .logo-block {
+                display: flex;
+                flex: 1 1 auto;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                img {
+                    width: 174px;
+                }
+                .logo-text {
+                    font-family: Lato;
+                    font-weight: 900;
+                    font-size: 24px;
+                    line-height: 100%;
+                    letter-spacing: 0.75px;
+                    text-align: center;
+                    background: linear-gradient(90.4deg, #424242 -5.44%, #050099 38.62%, #C701DD 92.05%);
+                    background-clip: text;
+                    color: transparent;
+                    margin-top: 18px;
+
+                }
+            }
+        }
+    }   
+}

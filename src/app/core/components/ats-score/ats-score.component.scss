@@ -1,114 +1,133 @@
-
-.ats-score-container {
-    width: 969px;
-    height: 437px;
-    background: #FFFFFF;
-    border-radius: 20px;
-    display: flex;
-    place-self: center;
-    margin-top: 36px;
-
-   .pie-chart {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    place-content: center;
-
-    .chart-text{
-        margin-top: 20px;
-        color: #000000;
-        font-family: Lato;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 100%;
-
-    }
-   } 
-   .rating-container {
-    width: 60%;
-    width: 60%;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    flex-direction: column;
-    align-items: end;
-
-    .rating-box-container {
+.resume-summary-container{
+    .resume-summary{
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 60px;
-        margin-right: 117px;
-    }
+        justify-content: center;
+        margin-top: 36px;
 
-    .next-btn-container {
-        display: flex;
-        justify-content: end;
-        margin-right: 147px;
-        margin-top: 44px;
-        .next-btn {
-            width: 200px;
-            height: 48px;
-            border-radius: 10px;
-            background: #FF9500;
-            color: #FFFFFF;
-            outline: none;
-            padding: 0;
-            border-style: none;
-            font-family: Lato;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 100%;
-            i {
-                font-size: 30px;
+        .resume-score-block {
+            padding: 14px 30px;
+            background: linear-gradient(90deg, #FFFFFF 0%, #F3F2F9 100%);
+            border-radius: 15px;
+        }
+        .score-text-box {
+            .score-title {
+                font-size: 16px;
+            }
+            .scre-value-text {
+                font-size: 20px;
+            }
+        }
+        .score-percentage-block {
+            margin-left: 12px;
+            .score-percentage-box {
+                background-color: #FFFFFF;
+                width: 140px;  
+                height: 28px;
+                border-radius: 10px;
+                .score-percentage {
+                    background-color:  rgba(111, 192, 39, 1);
+                    color: #FFFFFF;
+                    border-radius: 10px;
+                    height: 28px;
+                    font-weight: 900;
+                    font-size: 20px;
+                    line-height: 100%;
+                    letter-spacing:0.75px;
+                    padding-left: 10px;
+                    vertical-align: middle;
+                    display: flex;
+                    align-items: center;
+                }
             }
         }
     }
 
-    .rating-box {
-        width: 161px;
-        height: 60px;
-        border-width: 1px;
-        border-radius: 20px;
-        background-color: #fff;
-        border: 1px solid #F4F4F4;
-        padding: 10px 10px 10px 12px;
+    .review-points-container {
         display: flex;
-        justify-content: space-between;
-        align-items: unset;
-        flex-direction: column;
-        .label {
-            font-family: Lato;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 100%;
-        }
-        .data {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 24px;
+        .review-card {
+            width: 176px;
             display: flex;
-            align-items: end;
+            flex-direction: column;
             justify-content: space-between;
-            .score-percent {
+            padding: 18px 24px;
+            border: 1px solid rgba(244, 244, 244, 1);
+            border-radius: 15px;
+
+            .card-header {
+                font-size: 12px;
                 font-family: Lato;
-                font-weight: 900;
-                font-size: 36px;
+                font-weight: 400;
+                font-size: 12px;
                 line-height: 100%;
-                color:  #000000;
+                letter-spacing:0.75px;
 
             }
-            .score-value {
+            .card-block2 {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 10px;
+
+                .card-percentage {
+                    font-family: Lato;
+                    font-weight: 900;
+                    font-size: 18px;
+                    line-height: 100%;
+                    letter-spacing:0.75px;
+
+                }
+            
+                .card-status {
+                color: rgba(216, 129, 99, 1);
+                background: rgba(253, 244, 231, 1);
+                border-radius: 5px;
+                padding: 5px;
                 font-family: Lato;
                 font-weight: 700;
                 font-size: 12px;
-                color:  #D88163;
-                padding: 5px;
-                border-radius: 5px;
-                background: #FFE5E5;
+                line-height: 100%;
+                letter-spacing: 1;
+
+                 }
             }
 
+            
         }
     }
-   }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .resume-summary-container{
+        .resume-summary{
+            display: flex;
+            justify-content: center;
+
+            .resume-score-block {
+                padding: 14px 30px;
+                background: linear-gradient(90deg, #FFFFFF 0%, #F3F2F9 100%);
+                border-radius: 15px;
+            }
+            .score-text-box {
+                .score-title {
+                    font-size: 14px;
+                }
+                .scre-value-text {
+                    font-size: 16px;
+                }
+            }
+            .score-percentage-block {
+                margin-left: 12px;
+            }
+        }
+
+        .review-points-container {
+            flex-wrap: wrap;
+        }
+    }
 }

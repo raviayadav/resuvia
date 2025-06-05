@@ -1,20 +1,24 @@
 <div class="header-container">
     <div class="logo">
-        <img src="../../../assets/images/logo.svg" alt="logo">
+      <a routerLink="/upload-resume" [routerLinkActive]="'active'">
+        <img routerLink="/upload-resume" src="../../../assets/images/logo.svg" alt="logo">
+      </a>
+        
     </div>
     <div class="nav-links">
         <a routerLink="/upload-resume" [routerLinkActive]="'active'" class="nav-link">Upload resume</a>
-        <a routerLink="/about-us" [routerLinkActive]="'active'" class="nav-link">About us</a>
-        <a routerLink="/plans" [routerLinkActive]="'active'" class="nav-link">Plans</a>
+        <a routerLink="/plans" [routerLinkActive]="'active'" class="nav-link">About us</a>
+        <a routerLink="/my-space" [routerLinkActive]="'active'" class="nav-link">My space</a>
     </div>
 
     <!-- Auth Links/Button -->
     <div class="login-signup-block">
       <!-- Show Login/Signup if NOT logged in -->
-      <ng-container *ngIf="!(isLoggedIn$ | async)">
-        <a routerLink="/signup" class="nav-link signup-link">Sign up</a>
-        <a routerLink="/login" class="nav-link login-link">Login</a>
-      </ng-container>
+       @let isLoggedIn = !(isLoggedIn$ | async);
+       @if(isLoggedIn){
+          <a routerLink="/signup" class="nav-link signup-link">Sign up</a>
+          <a routerLink="/login" class="nav-link login-link">Login</a>
+       }
 
       <!-- Show Logout if logged in -->
       <ng-container *ngIf="isLoggedIn$ | async">

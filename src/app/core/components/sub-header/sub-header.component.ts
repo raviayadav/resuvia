@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input} from '@angular/core';
 
 @Component({
   selector: 'app-sub-header',
@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './sub-header.component.scss'
 })
 export class SubHeaderComponent {
-  @Input() pageType!: string;
+   pageType = input<string>('');
 
 }

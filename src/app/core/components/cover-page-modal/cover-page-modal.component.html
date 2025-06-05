@@ -1,0 +1,41 @@
+<div class="cover-page-modal-container" aria-hidden="true">
+    <div class="header">
+        <div class="header-text">Create cover page</div>
+        <div class="header-close"><i (click)="closeModal()" class="bi bi-x-lg cursor-pointer"></i></div>
+    </div>
+
+    <div class="modal-body">
+        @if(!showEmailSentPage()){
+            <div class="create-cover-container">
+                <app-dropbox (onFileDropped)="onFileDropped($event)"
+                    (fileBrowseHandler)="fileBrowseHandler($event)"
+                    title="Upload Job description of the company"
+                    subTitle="PDF, DOCX supported">
+                </app-dropbox>
+                <div class="or-text">or</div>
+                <div class="create-btn-select">
+                    @if(checked()){
+                        <button (click)="checkedChange(false)" type="button" class="btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i>Create as per my CV</button>
+                    }@else {
+                        <button  (click)="checkedChange(true)" type="button" class="btn btn-outline-primary"><i class="bi bi-circle"></i>Create as per my CV</button>
+                    }
+                </div>
+
+                <div class="cover-letter-btn">
+                    <button  type="button" [disabled]="!checked()" (click)="createCoverPage()" class="btn btn-primary">Create cover letter</button>
+                </div>
+            </div>
+        }@else {
+            <div class="email-sent-block">
+                <div class="success-icon">
+                    <img src="assets/images/tick1.svg" alt="success" />
+                </div>
+                <div class="title">Sent to your email ID</div>
+                <button  type="button" (click)="closeModal()" class="btn btn-primary">Done</button>
+
+            </div>
+        }
+       
+    </div>
+
+</div>  

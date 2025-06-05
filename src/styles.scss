@@ -1,14 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 
-
+      
       body {
-        font-family: "Lato", sans-serif;
-        background-image: radial-gradient(circle at 135%, #E8DDD3 0% , #fff 50%, #E3E1F0 100%);
-        width: 100vw;
-        float: left;
+        font-family: "Lato";
+        --bs-body-font-family: "Lato";
+        background: radial-gradient(176.46% 411.29% at -27.11% -31.07%, #E3E1F0 0%, #FFFFFF 50%, #E8DDD3 100%) no-repeat;
         position: relative;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh;
         margin: 0;
+        height: 100vh;
+        background-position: center;
+        width: 100%;
+        float: left;
+        letter-spacing: 0.75px;
       }
+
+    .modal-backdrop.cover-modal-backdrop {
+      opacity: 0.7 !important;
+      background: linear-gradient(180deg, rgba(30, 1, 71, 0.8) 0%, rgba(45, 0, 50, 0.8) 100%);;
+    }
+
+    .cover-modal-dialog {
+        --bs-modal-width: 702px;
+    }
+
+     .signup-modal-backdrop {
+      opacity: 0.7 !important;
+      background: linear-gradient(180deg, rgba(30, 1, 71, 0.8) 0%, rgba(45, 0, 50, 0.8) 100%);;
+    }
+
+    .signup-modal-dialog {
+        --bs-modal-width: 80vw;
+        --bs-modal-height: 80vh;
+    }
+
+    @media only screen and (max-width: 767px) {
+    .cover-page-modal-container {
+        --dropbox-width: 100%;
+    }
+      .cover-modal-dialog {
+        margin: 0 24px !important;
+    }
+}

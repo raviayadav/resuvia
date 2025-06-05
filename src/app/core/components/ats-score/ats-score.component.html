@@ -1,37 +1,55 @@
-<div class="ats-score-container">
-    <div class="pie-chart">
-       <app-chart></app-chart>
-       <div class="chart-text">Your resume score 76 out of 100</div>
-    </div>
-    <div class="rating-container">
-        <div class="rating-box-container">
-            <div class="rating-box">
-                <div class="label">Formatting</div>
-                <div class="data">
-                    <div class="score-percent">72%</div>
-                    <div class="score-value">average</div>
+<div class="resume-summary-container">
+    <div class="resume-summary">
+        <div class="resume-score-block d-flex justify-content-center align-items-center">
+            <div class="score-text-box d-flex flex-column align-items-start">
+                <div class="score-title">Your resume score</div>
+                <div class="scre-value-text">72 out of 100</div>
+            </div>
+            <div class="score-percentage-block d-flex align-items-center">
+                <div class="score-percentage-box" >
+                    <span class="score-percentage" style="width: 72%;">72%</span>
                 </div>
             </div>
-            <div class="rating-box"> <div class="label">Formatting</div>
-            <div class="data">
-                <div class="score-percent">72%</div>
-                <div class="score-value">average</div>
-            </div></div>
-            <div class="rating-box"> <div class="label">Formatting</div>
-            <div class="data">
-                <div class="score-percent">72%</div>
-                <div class="score-value">average</div>
-            </div></div>
-            <div class="rating-box"> <div class="label">Formatting</div>
-            <div class="data">
-                <div class="score-percent">72%</div>
-                <div class="score-value">average</div>
-            </div></div>
-        </div>
-        <div class="next-btn-container">
-
-            <button class="next-btn d-flex place-content-center align-items-center justify-content-center" (click)="checkFeedbackCard()">Next <i class="bi bi-arrow-right ms-2"></i> </button>
         </div>
     </div>
-    
+
+    <div class="review-points-container">
+        <div class="review-card">
+            <div class="card-header">Formatting</div>
+            <div class="card-block2">
+                <div class="card-percentage">72%</div>
+                <div class="card-status">Average</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="card-header">Formatting</div>
+            <div class="card-block2">
+                <div class="card-percentage">72%</div>
+                <div class="card-status">Average</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="card-header">Formatting</div>
+            <div class="card-block2">
+                <div class="card-percentage">72%</div>
+                <div class="card-status">Average</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="card-header">Formatting</div>
+            <div class="card-block2">
+                <div class="card-percentage">72%</div>
+                <div class="card-status">Average</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="feedback-container">
+        <feedback-card></feedback-card>
+    </div>
+
 </div>

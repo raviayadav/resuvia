@@ -1,0 +1,165 @@
+.cover-page-modal-container {
+    padding: 30px 24px 30px;
+    --dropbox-height: 186px;
+    --dropbox-width: 422px;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        .header-text {
+            font-family: Lato;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing:0.75px;
+        }
+        .header-close{
+            display: flex;
+            align-items: start;
+            i {
+                cursor: pointer;
+                margin-top: -12px;
+                font-size: 24px;
+                color: rgba(158, 158, 158, 1);
+           }
+        }
+    }
+
+    .modal-body {
+        margin: 60px 14px 14px;
+        .or-text {
+            font-family: Lato;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing:0.75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .create-btn-select {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 28px;
+            .btn {
+                padding: 12px 20px;
+                color:  rgba(39, 5, 86, 1);
+                border: 1px solid 1px solid rgba(199, 1, 221, 1);
+                font-family: Lato;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 100%;
+                letter-spacing:0.75px;
+
+                &:hover {
+                    background-color: transparent !important;
+                }
+                &:active {
+                    background-color: transparent !important;
+                }
+                .bi {
+                    margin-right: 10px;
+                    color:  3px solid rgba(199, 1, 221, 1);
+                }
+            }
+            
+        }
+
+        .cover-letter-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 32px;
+            font-family: Lato;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 100%;
+            letter-spacing:0.75px;
+
+
+            .btn {  
+                background:   rgba(255, 149, 0, 1);
+                border: 1px solid   rgba(255, 149, 0, 1);
+                padding: 12px 25px;
+                font-family: Lato;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 100%;
+                letter-spacing:0.75px;
+
+                &:disabled {
+                    background:  rgba(180, 180, 180, 1);
+                    border: 1px solid  rgba(180, 180, 180, 1);
+                    padding: 12px 25px;
+                }
+            }
+        }
+
+        .email-sent-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .success-icon {
+                box-shadow: 0 0 0 10px rgba(211, 243, 238, 1), 
+                0 0 0 15px rgba(211, 243, 238, 0.1), 
+                0 0 0 20px rgba(211, 243, 238, 0.5);
+                width: 58px;
+                height: 58px;
+                background: #4BE074;
+                display: flex;
+                place-content: center;
+                border-radius: 50%;
+
+            }
+
+            .title {
+                font-family: Lato;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 100%;
+                letter-spacing:0.75px;
+                color: rgba(0, 0, 0, 1);
+                margin-top: 36px;
+                margin-bottom: 50px;
+
+            }
+
+             .btn {  
+                background:   rgba(255, 149, 0, 1);
+                border: 1px solid   rgba(255, 149, 0, 1);
+                padding: 12px 25px;
+                font-family: Lato;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 100%;
+                letter-spacing:0.75px;
+                padding: 12px 72px;
+            }
+        }
+         
+    }
+    
+}
+
+@media only screen and (max-width: 767px) {
+    .cover-page-modal-container {
+        --dropbox-width: 100%;
+    }
+    .modal-body  {
+        .email-sent-block {
+            .title {
+                font-family: Lato;
+                font-weight: 700;
+                font-size: 24px !important;
+                line-height: 100%;
+                letter-spacing: 4%;
+
+            }
+        }
+    }
+    
+
+}

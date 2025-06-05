@@ -1,22 +1,24 @@
-@if(pageType !== 'payment-success') {<app-sub-header [pageType]="pageType"></app-sub-header>}
-@if(pageType === 'resume-upload'){
+<app-sub-header [pageType]="pageType"></app-sub-header>
+
     <div class="resume-upload-container">
-        <div class="dropbox" appDnd (fileDropped)="onFileDropped($event)">
-            <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event)" />
-            <div class="dropbox-title">Click/Drag & drop your resume</div>
-            <div class="dropbox-subtitle">PDF, DOCX supported</div>
-        </div>
+       <app-dropbox (onFileDropped)="onFileDropped($event)" (fileBrowseHandler)="fileBrowseHandler($event)" 
+       [title]="dropBoxTitle()"
+       subTitle="PDF, DOCX supported"
+       ></app-dropbox>
         <div class="upload-footer">
-            <button class="upload-btn" (click)="uploadFiles()">Upload</button>
+            @if(buttonTitle() === 'Upload'){ 
+                <button class="upload-btn" appDnd (fileBrowseHandler)="fileBrowseHandler($event)">{{buttonTitle()}}</button>
+            }
+            @else{
+                <button class="upload-btn" (click)="uploadFiles()">{{buttonTitle()}}</button>
+            }
             <p class="button-text">Upload your resume now for a free ATS analysis!</p>
+            <div class="footer">
+                <p class="text">Check if you’ll get shortlisted…</p>
+                <p class="text">Improve it like a recruiter would</p>
+                <p class="text">Get a custom AI Cover Letter</p>
+            </div>
         </div>
     </div>
-} @else if(pageType ==='ats-score'){ 
-    <app-ats-score (pageType)="setPageType($event)" ></app-ats-score>
-} @else if (pageType === 'feedback-card') {
-    <feedback-card ></feedback-card>
-} @else if (pageType === 'payment-success') {
-    <app-payment-success></app-payment-success>
-}
 
 

@@ -4,7 +4,7 @@
 
     .title {
         text-align: center;
-        background: linear-gradient(to right, #424242, #050099, #C701DD);
+        background: linear-gradient(90.4deg, #424242 -5.44%, #050099 38.62%, #C701DD 92.05%);
         background-clip: text;
         color: transparent;
         font-size: 36px;
@@ -21,10 +21,8 @@
         line-height: 20px;
         font-weight: 400;
         color: #7D7D7D;
-        height: 28px;
-        top: 244px;
-        left: 323px;
-        gap: 62px;
+        gap: 26px;
+        padding: 0 34px;
 
         .active{
             color: #270556;
@@ -46,4 +44,56 @@
         
     }
    
+}
+
+
+@media only screen and (max-width: 767px) {
+    .sub-header-container {
+        padding: 16px 0;
+        .header-text {
+            
+            padding: 0 60px;
+            padding-bottom: 16px;
+            .title {
+                font-family: Lato;
+                font-weight: 900;
+                font-size: 24px;
+                line-height: 100%;
+                letter-spacing: 0.75px;
+                text-align: center;
+            }
+        }
+ 
+        .menus{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 400;
+            color: #7D7D7D;            
+            font-family: Lato;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 100%;
+            letter-spacing: 0.75px;
+
+            .active{
+                color: #270556;
+                font-weight: 500;
+                position: relative;
+                margin-left: 30px;
+                
+                &::before{
+                    content: "";
+                    background-color: #C701DD;
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 100%;
+                    position: absolute;
+                    left: -15px;
+                    top: 5px;
+                }
+            }
+            
+        }
+    }
 }

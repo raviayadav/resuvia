@@ -1,0 +1,5 @@
+ <div class="dropbox" appDnd (fileDropped)="onFileDroppedEvent($event)">
+    <input type="file" #fileDropRef id="fileDropRef" multiple (change)="onFileBrowseHandler($event)" />
+    <div class="dropbox-title">{{title()}}</div>
+    <div class="dropbox-subtitle">{{subTitle()}}</div>
+</div>
