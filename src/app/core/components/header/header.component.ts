@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common'; // Added for async pipe, *ngIf
 import { AuthService } from '../../services/auth.service'; // Added
@@ -13,6 +13,7 @@ import { Observable } from 'rxjs'; // Added
 })
 export class HeaderComponent {
   isLoggedIn$: Observable<boolean>; // Added
+  hideMenu = signal(true);
 
   constructor(private authService: AuthService) { // Added constructor and injection
     this.isLoggedIn$ = this.authService.loggedIn$; // Assign observable
@@ -27,5 +28,10 @@ export class HeaderComponent {
       console.error('Error logging out:', error);
       // Handle logout error display if necessary
     }
+  }
+
+  toggleMenu() {
+    const isHidden = this.hideMenu();
+    this.hideMenu.set(!isHidden)
   }
 }

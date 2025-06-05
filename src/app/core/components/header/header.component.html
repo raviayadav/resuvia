@@ -1,28 +1,36 @@
-<div class="header-container">
-    <div class="logo">
-      <a routerLink="/upload-resume" [routerLinkActive]="'active'">
-        <img routerLink="/upload-resume" src="../../../assets/images/logo.svg" alt="logo">
+ <nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/upload-resume" [routerLinkActive]="'active'">
+        <img routerLink="/upload-resume" src="assets/images/logo.svg" alt="logo">
       </a>
-        
-    </div>
-    <div class="nav-links">
-        <a routerLink="/upload-resume" [routerLinkActive]="'active'" class="nav-link">Upload resume</a>
-        <a routerLink="/plans" [routerLinkActive]="'active'" class="nav-link">About us</a>
-        <a routerLink="/my-space" [routerLinkActive]="'active'" class="nav-link">My space</a>
-    </div>
+    <button (click)="toggleMenu()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="navbar-collapse" id="navbarText" [ngClass]="hideMenu() ? 'collapse': ''">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+         <a routerLink="/upload-resume" [routerLinkActive]="'active'" class="nav-link">Upload resume</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/plans" [routerLinkActive]="'active'" class="nav-link">About us</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/my-space" [routerLinkActive]="'active'" class="nav-link">My space</a>
+        </li>
+      </ul>
 
-    <!-- Auth Links/Button -->
-    <div class="login-signup-block">
-      <!-- Show Login/Signup if NOT logged in -->
+      <div class="login-signup-block">
        @let isLoggedIn = !(isLoggedIn$ | async);
        @if(isLoggedIn){
           <a routerLink="/signup" class="nav-link signup-link">Sign up</a>
           <a routerLink="/login" class="nav-link login-link">Login</a>
        }
 
-      <!-- Show Logout if logged in -->
       <ng-container *ngIf="isLoggedIn$ | async">
         <button (click)="logout()" class="nav-link logout-button">Logout</button>
       </ng-container>
     </div>
-</div>
+    </div>
+  </div>
+</nav>
+

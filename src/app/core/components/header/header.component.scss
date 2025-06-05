@@ -1,42 +1,46 @@
-.header-container {
+.navbar  {
     display: flex;
     justify-content: space-between;
     align-items: center;    
     margin: 65px 100px 0px 100px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid rgba(221, 221, 221, 1);
 
-    .nav-links {
+    .container-fluid {
+        padding: 0;
+
+        .navbar-nav {
+            justify-content: space-around;
+            flex: 1 1 60%;
+        }
+    }
+    .nav-link {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 50%;
-        .nav-link {
-            text-decoration: none;
-            &.active {
+        padding: 0;
+        font-family: Lato;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 4%;
+        &.active {
                 font-family: Lato;
                 font-weight: 900;
                 font-size: 18px;
                 line-height: 100%;
                 letter-spacing:0.75px;
                 color: #000000;
-            }
         }
        
     }
     .login-signup-block {
         display: flex;
-        justify-content: end;
-        align-items: center;
         width: 20%;
-        gap: 40px;
 
         // Styles for Auth links/button
         .nav-link { // Inherit base nav-link styles if desired, or define separately
             text-decoration: none;
             cursor: pointer;
-            padding: 8px 12px; // Example padding
-            border-radius: 4px; // Example border-radius
             transition: background-color 0.2s ease;
 
             &.signup-link {
@@ -73,5 +77,55 @@
             }
         }
     }
+}
 
+@media only screen and (max-width: 767px) {
+    .header-container {
+        margin: 28px;
+    }
+    .navbar {
+        padding: 0;
+        margin: 28px 28px 0;
+        .container-fluid {
+            padding: 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(221, 221, 221, 1);
+        }
+    }
+    .nav-link {
+            display: flex  !important;
+            justify-content: start !important;
+            align-items: start !important;
+            &.active {
+                font-family: Lato;
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 100%;
+                letter-spacing:0.75px;
+                color: #000000;
+            }
+        }
+    .navbar-toggler {
+        color: rgba(0, 0, 0, 1);
+        border: none !important;
+        font-size: 24px;
+        &:focus {
+            border: none !important;
+            box-shadow: none;
+        }
+    }
+
+    .login-signup-block {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-item {
+        margin-bottom: 10px;
+        &:first-child {
+            margin-top: 10px;
+        }
+    }
+    .signup-link {
+        margin-bottom: 10px;
+    }
 }
