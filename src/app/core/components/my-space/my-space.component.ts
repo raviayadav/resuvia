@@ -1,12 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { SubHeaderComponent } from '../sub-header/sub-header.component';
-import { AtsScoreComponent } from '../ats-score/ats-score.component';
-import { ActionFeedbackComponent } from '../action-feedback/action-feedback.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-my-space',
-  imports: [SubHeaderComponent, AtsScoreComponent, ActionFeedbackComponent],
+  imports: [RouterOutlet ,SubHeaderComponent],
   templateUrl: './my-space.component.html',
   styleUrl: './my-space.component.scss'
 })

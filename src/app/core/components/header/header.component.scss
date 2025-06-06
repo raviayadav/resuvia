@@ -35,7 +35,8 @@
     }
     .login-signup-block {
         display: flex;
-        width: 20%;
+        width: 128px;
+        justify-content: space-between;
 
         // Styles for Auth links/button
         .nav-link { // Inherit base nav-link styles if desired, or define separately

@@ -5,7 +5,6 @@ import { LoginComponent } from './features/auth/login/login.component'; // Added
 import { SignupComponent } from './features/auth/signup/signup.component'; // Added
 import { authGuard } from './core/guards/auth.guard'; // Added
 import { PaymentSuccessComponent } from './core/components/payment-success/payment-success.component';
-import { MySpaceComponent } from './core/components/my-space/my-space.component';
 
 export const routes: Routes = [
   { path: '',   redirectTo: 'upload-resume', pathMatch: 'full' }, // Consider changing redirect if upload needs auth
@@ -13,6 +12,8 @@ export const routes: Routes = [
   { path: 'signup', component: SignupComponent }, // Added
   { path: 'upload-resume', component: ResumeUploadComponent }, // Guard added
   { path: 'payment', component: PaymentSuccessComponent  }, // Guard added
-  { path: 'my-space', component: MySpaceComponent  }, // Guard added
+  {path: 'my-space', loadComponent: () => import('./core/components/my-space/my-space.component').then(m => m.MySpaceComponent),
+        loadChildren: () => import('./core/components/my-space/my-space.routes').then(m => m.routes) ,
+     },
   { path: '**', component: PageNotFoundComponent },
 ];

@@ -14,7 +14,7 @@ export class PaymentSuccessComponent {
   private sharedService = inject(SharedService);
 
   redirectTo(path: string){
-    this.router.navigate(['my-space']);
+    this.router.navigate(['my-space/feedback']);
     this.sharedService.pageType.next('action-feedback');
   }
 }
