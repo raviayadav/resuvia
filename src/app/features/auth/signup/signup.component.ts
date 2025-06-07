@@ -55,22 +55,40 @@ export class SignupComponent implements OnInit, OnDestroy {
     const credentials = this.signupForm.value;
 
     try {
-      const { error } = await this.authService.signUp(credentials);
-      if (error) {
-        this.errorMessage = error.message || 'Signup failed. Please try again.';
-      } else {
-        // Important: Supabase often requires email confirmation.
-        // Inform the user to check their email.
-        this.successMessage = 'Signup successful! Please check your email to confirm your account.';
-        // Optionally clear the form or redirect to a confirmation page/login page after a delay
-        this.signupForm.reset();
-        // Consider redirecting after a few seconds or providing a link to login
-        // setTimeout(() => this.router.navigate(['/login']), 5000);
+      const result = await this.authService.signUp(credentials);
+      if (result.error) {
+        this.errorMessage = result.error.message || 'Signup failed. Please try again.';
+      } else if (result.user) {
+        const { nextStep } = result.user;
+        if (nextStep && nextStep.signUpStep === 'CONFIRM_SIGN_UP') { // Corrected enum value
+          this.successMessage = 'Signup successful! Please check your email for a confirmation code.';
+          // Navigate to a confirmation page, passing the username (email)
+          this.router.navigate(['/auth/confirm-signup'], { queryParams: { username: credentials.email } });
+        } else {
+          // This case should ideally not happen if autoSignIn is false or confirmation is required.
+          // If autoSignIn is enabled and no confirmation needed, user would be signed in.
+          this.successMessage = 'Signup successful!';
+          // The loggedIn$ subscription in ngOnInit should handle redirect.
+        }
+        // this.signupForm.reset(); // Reset form on success
       }
     } catch (err: any) {
       this.errorMessage = err.message || 'An unexpected error occurred during signup.';
       console.error('Signup error:', err);
     } finally {
+      this.isLoading = false;
+    }
+  }
+
+  async signInWithGoogle(): Promise<void> {
+    this.isLoading = true;
+    this.errorMessage = null;
+    try {
+      await this.authService.signInWithGoogle();
+      // Redirect will happen.
+    } catch (error: any) {
+      this.errorMessage = error.message || 'Google Sign-Up/Sign-In failed.';
+      console.error('Google Sign-Up/Sign-In initiation error:', error);
       this.isLoading = false;
     }
   }

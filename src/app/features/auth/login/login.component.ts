@@ -52,21 +52,42 @@ export class LoginComponent implements OnInit, OnDestroy {
     const credentials = this.loginForm.value;
 
     try {
-      const { error } = await this.authService.signInWithPassword(credentials);
+      const { error, user } = await this.authService.signInWithPassword(credentials);
       if (error) {
+        // Amplify errors often have a 'name' property that can be more specific
         this.errorMessage = error.message || 'Login failed. Please check your credentials.';
+        if (error.name === 'UserNotConfirmedException') {
+          this.errorMessage = 'User is not confirmed. Please check your email for a confirmation link or code.';
+          // Optionally, navigate to a confirmation page:
+          // this.router.navigate(['/auth/confirm-signup'], { queryParams: { username: credentials.email } });
+        }
+      } else if (user) {
+        // Navigation is handled by the ngOnInit subscription if successful
+        // this.router.navigate(['/']); // Or specific dashboard
       } else {
-        // Navigation might be handled by the ngOnInit subscription,
-        // but explicit navigation here ensures it happens immediately after login.
-        this.router.navigate(['/']); // Navigate to home or dashboard
+        // Handle cases where there's no user but no explicit error (should be rare with Amplify v6)
+         this.errorMessage = 'Login failed. Please try again.';
       }
     } catch (err: any) {
       this.errorMessage = err.message || 'An unexpected error occurred during login.';
       console.error('Login error:', err);
     } finally {
       this.isLoading = false;
-      // Reset form state if needed, or handle persistence
-      // this.loginForm.reset();
     }
+  }
+
+  async signInWithGoogle(): Promise<void> {
+    this.isLoading = true;
+    this.errorMessage = null;
+    try {
+      await this.authService.signInWithGoogle();
+      // Redirect will happen, so no explicit navigation here.
+      // Errors during the redirect process will be caught by the Hub listener or on the callback page.
+    } catch (error: any) {
+      this.errorMessage = error.message || 'Google Sign-In failed.';
+      console.error('Google Sign-In initiation error:', error);
+      this.isLoading = false;
+    }
+    // isLoading might remain true if redirect is successful, which is fine as the component will be left.
   }
 }
